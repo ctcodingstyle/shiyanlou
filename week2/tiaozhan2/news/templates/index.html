@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>index</title>
+</head>
+<body>
+	<div>
+		{% for str in lists %}
+		<a href='/files/{{str.id}}'>{{str.title}}</a><br/>
+		{% endfor %}
+	</div>
+</body>
+</html>
