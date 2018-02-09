@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>file</title>
+    <link href="{{url_for('static', filename="bootstrap-3.3.7-dist/css/bootstrap.min.css")}}" rel="stylesheet">
+    <style>
+        body {padding-left:60px;padding-top:70px}
+        h1 {height:100px}
+    </style>
+</head>
+<body>
+<div>
+    <div class="blog-header">
+	{% block title %}
+		<h1 class="blog-title">{{info}}</h1>
+	{% endblock %}
+    </div>
+	<div>
+		{% block created_time %}
+        <p class="blog-post-meta"><i>{{time}}</i></p>
+		{% endblock %}
+	</div>
+    <div>
+		{% block tag %}
+        <h4><span class="label label-primary">{{tag}}</span></h4>
+		{% endblock %}
+    </div>
+	<div>
+        <hr>
+		{% block content %}
+        <p>{{content}}</p>
+		{% endblock %}
+	</div>
+</div>
+</body>
+</html>

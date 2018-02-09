@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>index</title>
+    <link href="{{url_for('static', filename="bootstrap-3.3.7-dist/css/bootstrap.min.css")}}" rel="stylesheet">
+    <style>
+        li a {font-size:22px}
+        body {padding-top:70px}
+        h4 {padding-left:60px}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+	<div class="sidebar-module">
+		{% for str in lists %}
+        <h4><a href='/files/{{str.id}}'>{{str.title}}</a>
+            <span class="label label-primary">{{str.tag | splittag}}</span><h4>
+        <br/>
+		{% endfor %}
+	</div>
+    <script src="{{url_for('static', filename="bootstrap-3.3.7-dist/js/bootstrap.min.js")}}"></script>
+</body>
+</html>
