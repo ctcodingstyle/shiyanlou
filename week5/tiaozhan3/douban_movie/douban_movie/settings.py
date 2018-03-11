@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'douban_movie.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'douban_movie (+http://www.yourdomain.com)'
+USER_AGENT = 'douban_movie (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
