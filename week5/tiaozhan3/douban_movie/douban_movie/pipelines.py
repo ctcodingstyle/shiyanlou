@@ -13,11 +13,11 @@ class DoubanMoviePipeline(object):
     def process_item(self, item, spider):
         item['score'] = float(item['score'])
         item['summary'] = item['summary'].strip()
-        #if item['score'] >= 8.0:
-           #raise DropItem('movie score more than 8.0')
-        #else:
-        data = json.dumps(dict(item))
-        self.redis.lpush('douban_movie:items', data)
+        if item['score'] <= 8.0:
+           raise DropItem('movie score more than 8.0')
+        else:
+            data = json.dumps(dict(item))
+            self.redis.lpush('douban_movie:items', data)
         return item
 
     def open_spider(self, spider):
