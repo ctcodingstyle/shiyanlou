@@ -43,7 +43,7 @@ def main():
     url_template = 'https://github.com/shiyanlou?page={}&tab=repositories'
     tasks = [task(url_template.format(i)) for i in range(1, 5)]
     loop.run_until_complete(asyncio.gather(*tasks))
-    with open('/home/ct/shiyanlou-repos.csv', 'w', newline='') as f:
+    with open('/home/shiyanlou/shiyanlou-repos.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         writer.writerows(results)
 
